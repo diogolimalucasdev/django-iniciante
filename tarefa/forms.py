@@ -1,10 +1,7 @@
-from dataclasses import fields
-from socket import fromshare
-from django.forms import ModelForm
-from django.db import models
+from django import forms
 from .models import TarefasBd
 
-class ConteudoForm(ModelForm):
+class ConteudoForm(forms.ModelForm):
     class Meta:
         model=TarefasBd
-        fields=['conteudo',]
+        fields=('conteudo',)

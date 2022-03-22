@@ -7,7 +7,7 @@ def index(request):
     form=ConteudoForm()
     context={
         'conteudos': conteudo,
-        'forms': form,
+        'form': form,
     }
     return render(request, 'lista.html', context)
 
