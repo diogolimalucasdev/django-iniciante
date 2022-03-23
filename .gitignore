@@ -1,2 +1,5 @@
 tododjango/settings.py
+tododjango/tarefa/__pycache__
 tempo.txt
+db.sqlite3
+venv
