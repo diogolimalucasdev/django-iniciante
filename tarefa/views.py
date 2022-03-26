@@ -17,4 +17,11 @@ def index(request):
     }
     return render(request, 'lista.html', context)
 
+
+def delete_tarefa(request, id):
+    deleteTarefa = TarefasBd.objects.get(id=id)
+    deleteTarefa.delete()
+    return redirect('/')
+    
+
 # Create your views here.

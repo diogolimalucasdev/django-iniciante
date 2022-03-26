@@ -1,12 +1,20 @@
-<h1> To app Django </h1>
-<form  method="post"> {% csrf_token %}
-    {{form.as_p}}
-    <button type="submit">Enviar</button>
-</form>
-{% for conteudo in conteudos%}
-<p>
-    {{conteudo.conteudo}} <br>
-    {{conteudo.data}}
-</p>
-
+{% extends './model.html' %}
+{% block content %}
+{% load bootstrap %}
+<div class="container">
+    <h1 class="text-center"> Meu app em django </h1>
+    <form method="post"> {% csrf_token %}
+        {{form|bootstrap}}
+        <button type="submit">Enviar</button>
+    </form>
+    {% for conteudo in conteudos%}
+    <p>
+        {{conteudo.conteudo}} <br>
+        {{conteudo.data}}
+    </p>
+    <form action="delete/{{conteudo.id}}" method="post"> {% csrf_token %}
+        <button type="submit">Delete</button>
+    </form>
+</div>
 {% endfor %}
+{% endblock %}
